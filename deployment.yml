@@ -33,10 +33,10 @@ kind: Service
 metadata:
   name: #{deployment.name}
   labels:
-    run: #{deployment.name}
+    app: #{deployment.name}
 spec:
   ports:
   - port: #{deployment.port}
     protocol: TCP
   selector:
-    run: #{deployment.name}
+    app: #{deployment.name}
