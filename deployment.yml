@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: #{app.name}
+spec:
+  replicas: #{app.replicas}
+  selector:
+    matchLabels:
+      app: #{app.name}
+  template:
+    metadata:
+      labels:
+        app: #{app.name}
+    spec:
+      containers:
+      - name: #{app.name}
+        image: #{app.image.repository}:#{app.image.version}
+        ports:
+        - containerPort: 8080
