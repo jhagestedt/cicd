@@ -22,5 +22,8 @@ spec:
       containers:
       - name: #{deployment.name}
         image: #{image.repository}:#{image.version}
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: #{deploment.profiles}
         ports:
-        - containerPort: 8080
+        - containerPort: #{deployment.port}
