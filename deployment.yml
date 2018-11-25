@@ -1,19 +1,26 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: #{namespace.name}
+  labels:
+    name: #{namespace.name}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: #{app.name}
+  name: #{deployment.name}
 spec:
-  replicas: #{app.replicas}
+  replicas: #{deployment.replicas}
   selector:
     matchLabels:
-      app: #{app.name}
+      app: #{deployment.name}
   template:
     metadata:
       labels:
-        app: #{app.name}
+        app: #{deployment.name}
     spec:
       containers:
-      - name: #{app.name}
-        image: #{app.image.repository}:#{app.image.version}
+      - name: #{deployment.name}
+        image: #{image.repository}:#{image.version}
         ports:
         - containerPort: 8080
