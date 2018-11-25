@@ -27,3 +27,16 @@ spec:
           value: #{deployment.profiles}
         ports:
         - containerPort: #{deployment.port}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: #{deployment.name}
+  labels:
+    run: #{deployment.name}
+spec:
+  ports:
+  - port: #{deployment.port}
+    protocol: TCP
+  selector:
+    run: #{deployment.name}
