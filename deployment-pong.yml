@@ -25,12 +25,8 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: #{deployment.profiles}
-        - name: SPRING_DATASOURCE_URL
-          value: #{database.url}
-        - name: SPRING_DATASOURCE_USERNAME
-          value: #{database.username}
-        - name: SPRING_DATASOURCE_PASSWORD
-          value: #{database.password}
+        - name: AZURE_SERVICEBUS_CONNECTION
+          value: #{servicebus.connection}
         ports:
         - containerPort: #{deployment.port}
 ---
