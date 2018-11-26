@@ -36,7 +36,8 @@ metadata:
     app: #{deployment.name}
 spec:
   ports:
-  - port: #{deployment.port}
+  - name: http
+    port: #{deployment.port}
     protocol: TCP
   selector:
     app: #{deployment.name}
