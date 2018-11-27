@@ -34,7 +34,7 @@ spec:
         - name: SPRING_REDIS_HOST
           value: #{redis.host}
         - name: SPRING_REDIS_PORT
-          value: "#{redis.port}"
+          value: '#{redis.port}'
         - name: SPRING_REDIS_PASSWORD
           value: #{redis.password}
         - name: SPRING_REDIS_SSL
