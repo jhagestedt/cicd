@@ -33,6 +33,14 @@ spec:
           value: #{database.password}
         - name: AZURE_SERVICEBUS_CONNECTION
           value: #{servicebus.connection}
+        - name: SPRING_REDIS_HOST
+          value: #{redis.host}
+        - name: SPRING_REDIS_PORT
+          value: #{redis.port}
+        - name: SPRING_REDIS_PASSWORD
+          value: #{redis.password}
+        - name: SPRING_REDIS_SSL
+          value: #{redis.ssl}
         ports:
         - containerPort: #{deployment.port}
 ---
