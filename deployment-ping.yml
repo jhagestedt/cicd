@@ -31,14 +31,6 @@ spec:
           value: #{database.username}
         - name: SPRING_DATASOURCE_PASSWORD
           value: #{database.password}
-        - name: SPRING_REDIS_HOST
-          value: #{redis.host}
-        - name: SPRING_REDIS_PORT
-          value: '#{redis.port}'
-        - name: SPRING_REDIS_SSL
-          value: '#{redis.ssl}'
-        - name: SPRING_REDIS_PASSWORD
-          value: #{redis.password}
         - name: AZURE_SERVICEBUS_CONNECTION
           value: #{servicebus.connection}
         ports:
